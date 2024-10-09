@@ -81,7 +81,7 @@
 <!--Hero.............................................................................-->
 
 <!-- <section class="site-section" id="portfolio-section" style="background-color:#373737"> -->
-    <div class="site-blocks-cover overlay bg-dark"id="home-section">
+    <div class="site-blocks-cover overlay" style="background-color:#00100B" id="home-section">
     
       <div class="container">
         <div class="row justify-content-center">
@@ -195,7 +195,7 @@
 <!--Services ends.............................................................................-->
 
 <!--About me.............................................................................-->
-    <div class="site-section bg-dark" id="about-section" >
+    <div class="site-section" style="background-color:#00100B" id="about-section" >
       <div class="container">
         <div class="row ">
        
@@ -340,9 +340,55 @@
 </div></div>
 </section>
 <!--Project.............................................................................-->
+<!----
+<section class="site-section" style="background-color:#00100B" id="blog-section">
+  <div id="project-sidebar">
+    <ul>
+      <li><a href="#p1" data-project="residence-core">Residence Core</a></li>
+      <li><a href="#" data-project="to-do-list">To Do List</a></li>
+      <li><a href="#" data-project="cruzade">Cruzade</a></li>
+      <li><a href="#" data-project="cameo2k24">Cameo2k24</a></li>
+    </ul>
+    <div class="col-8 mb-2">
+      <div class="blog-entry" data-project="residence-core"  style="background-color: #00100B" id="p1">
+        <div class="blog-entry">
+          <div class="service-number mr-4">
+              <div class="owl-carousel slide-one-item">
+                <div class="slide">
+                  
+                
+                    <img src="project/1.png" class="fardcon-img">
+                  
+                
+                </div>
+                <div class="slide">
+                
+                    <img src="project/2.png" class="fardcon-img">
+                  
+              
+                </div>
+                <div class="slide">
+                
+                    <img src="project/3.png" class="fardcon-img">
+                  
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    
+    <div class="col-4 mb-2">
+      <div class="blog-entry" data-project="to-do-list">
+        <!-- project images and content --
+      </div>
+    </div>
+    
+    -- and so on for each project --
+  </div>-->
 
 
-<section class="site-section bg-dark" id="blog-section">
+</section>
+<section class="site-section" style="background-color:#00100B" id="blog-section">
   <div class="container">
     <div class="row">
       
@@ -492,7 +538,7 @@
       </section>
 
 
-    <footer class="site-section bg-dark">
+    <footer class="site-section" style="background-color:#00100B">
       <div class="container">
         <div class="row mb-5">
           <div class="sizer">
@@ -557,7 +603,20 @@
   <script src="js/jquery.sticky.js"></script>
   
   <script src="js/main.js"></script>
+<script>
+  const projectSidebar = document.getElementById('project-sidebar');
+  const projectContainers = document.querySelectorAll('[data-project]');
+  
+  projectSidebar.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      const projectName = e.target.getAttribute('data-project');
+      const projectContainer = document.querySelector(`[data-project="${projectName}"]`);
+      projectContainer.classList.toggle('active');
+    }
+  });
 
+
+</script>
   
   </body>
 </html>
