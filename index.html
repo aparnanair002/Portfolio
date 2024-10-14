@@ -1,26 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Mode</title>
 
-<body class="authentication-bg position-relative">
-    <div class="account-pages pt-2 pt-sm-5 pb-4 pb-sm-5 position-relative">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-5 col-md-6 col-12">
-                    <div class="mb-4">
-                        <img src="assets/images/svg/under_maintenance.png" alt="" class="img-fluid">
-                    </div>
-                    <div class="text-center">
-                        <h2 class="mb-3 text-muted">Sorry we are under maintenance</h2>
-                        <p class="text-dark-emphasis fs-15 mb-1">Our website currently undergoing maintenance.</p>
-                        <p class="text-dark-emphasis fs-15 mb-4">We should be a back shotly. thankyou for patience.</p>
-                    </div>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            background-image: url("assets/img/pin.gif");
+            background-position: center;/* Center the image horizontally and vertically */
+            background-size: cover; /* Positioning context for absolute children */
+        }
+        
+          
+          .message-box {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1; /* keep z-index to 1 to bring the message box on top of the GIF */
+          }
+        
+        .text-muted {
+            color: #666; /* adjust the color to your liking */
+        }
+        
+        .text-dark-emphasis {
+            color: #333; /* adjust the color to your liking */
+        }
+        
+        .fs-15 {
+            font-size: 15px; /* adjust the font size to your liking */
+        }
+    </style>
+</head>
+<body>
 
-                </div> <!-- end col -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- end container -->
+    <div class="message-box">
+        <h2 class="mb-3 text-muted" >Sorry My website is under maintenance<br>14/10/24</h2>
+        <p class="text-dark-emphasis fs-15 mb-4">Will be back soon with a better interface. Thank you for your patience.</p>
     </div>
-    <!-- end page -->
-
 </body>
-
 </html>
