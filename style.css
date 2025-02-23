@@ -35,6 +35,7 @@
     border-radius: 5px;
     outline-style: solid;
     align-items: flex-start;
+    font-size:1.6rem;
     padding: 1rem;
     display: flex;
     overflow-y:scroll;
@@ -43,6 +44,12 @@
     flex-wrap: wrap;
     justify-content: start;
     word-spacing: 0.2rem;
+  }
+
+  @media (max-width: 600px) {
+    #textbox {
+      font-size: 1.3rem;
+    }
   }
   .ui-text {
     margin: 0;

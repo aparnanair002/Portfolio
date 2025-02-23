@@ -24,7 +24,7 @@ export const dialogueData = {
 <a href=""> CGPA:9.8 2016</a></p>
  <p>My hobby and about me are upstairs</p>`,
  hobby:`<p>My Hobby</p>My hobbies are  painting, crocheting and a little bit of reading, you could go to the library to know more about my education qualifications`,
- projects:`<h3>PROJECTS</h3><div style="font-size:25px">
+ projects:`<h3>PROJECTS</h3>
  <u>College Fest Booking Portal</u><p>   PHP,MySQL<br>
  Increased user registrations by 121.43% through developing and deploying the College Fest Booking Portal.</p>
 <u> Residence Association Management</u><p>                                                                   
@@ -42,7 +42,7 @@ PHP,MySQL<br>
  Milk Management -Dairy Direct </u> <p>                  
 PHP,MySQL           <br>
 Streamlined operations for dairy farmers with DairyDirect, to access their payment and reports from local
- milk societies as part of academic project</p></div>`,
+ milk societies as part of academic project</p>`,
  experience: `<h2>EXPERIENCE</h2>
  <u>SANTHISOFT
  TECHNOLOGIE</u><p> Intern - Jan 2025 – Present<br>
