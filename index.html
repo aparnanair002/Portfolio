@@ -1,66 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maintenance Mode</title>
-
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            width: 100vw;
-            background-image: url("assets/img/pin.gif");
-            background-position: center;/* Center the image horizontally and vertically */
-            background-size: cover; /* Positioning context for absolute children */
-        }
-        
-          
-          .message-box {
-            position: absolute;
-            top: 15%;
-            left: 50%;
-            text-align: center;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            z-index: 1; /* keep z-index to 1 to bring the message box on top of the GIF */
-          }
-        
-        .text-muted {
-            color: #666; /* adjust the color to your liking */
-        }
-        
-        .text-dark-emphasis {
-            color: #333; /* adjust the color to your liking */
-        }
-        
-        .fs-15 {
-            font-size: 15px; /* adjust the font size to your liking */
-        }
-    </style>
-</head>
-<body>
-
-    <div class="message-box">
-        <h2 class="mb-3 text-muted" >Sorry My website is under maintenance<br></h2>
-        <p class="text-dark-emphasis fs-15 mb-4">Will be back soon with a better interface. Thank you for your patience.</p>
-        <p class="text-dark-emphasis fs-15"><span id="todayDate"></span></p>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/PORTF.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Aparna Nair</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head> 
+  <body>
+    <div id="app">
+      <div id="ui">
+        <p class="note">Click around to move  and find:</p>
+        <p id="noter">About me<br> Connect Me <br>Resume<br>Education <br> Skillsets <br>Certificates <br>Projects<br>Experience <br>Hobbies,<br> Achievements<br>
+        <div id="dialogue" style="display: none">
+          <div id="textbox">
+            <p id="notesforuser" class="ui-text"></p>
+            <div class="btn-container">
+              <button id="close" class="ui-close-btn">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <canvas id="game"></canvas>
     </div>
-
-    <script>
-        // Get today's date in dd-mm-yyyy format
-        const today = new Date();
-        const day = String(today.getDate()).padStart(2, '0');
-        const month = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-        const year = today.getFullYear();
-        const formattedDate = `${day}-${month}-${year}`;
-        
-        // Insert the formatted date into the span
-        document.getElementById('todayDate').textContent = formattedDate;
-    </script>
-
-</body>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
