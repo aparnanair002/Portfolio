@@ -14,5 +14,10 @@
   "dependencies": {
     "kaboom": "^3000.1.17",
     "terser": "^5.39.0"
-  }
+  },
+  "main": "vite.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

@@ -6,23 +6,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - Aparna Nair</title>
     <link rel="stylesheet" href="/style.css" />
-  </head> 
+    <style>
+      /* Style for the certificate modal */
+     
+    </style>
+  </head>
+
   <body>
     <div id="app">
       <div id="ui">
-        <p class="note">Click around to move  and find:</p>
-        <p id="noter">About me<br> Connect Me <br>Resume<br>Education <br> Skillsets <br>Certificates <br>Projects<br>Experience <br>Hobbies,<br> Achievements<br>
-        <div id="dialogue" style="display: none">
-          <div id="textbox">
-            <p id="notesforuser" class="ui-text"></p>
-            <div class="btn-container">
-              <button id="close" class="ui-close-btn">Close</button>
-            </div>
-          </div>
-        </div>
+        <p class="note">Click around to move and find:</p>
+        <p id="noter">
+          About me<br> Connect Me <br>Resume<br>Education <br> Skillsets <br>
+          <a href="javascript:void(0);" onclick="openCertificateModal()">Certificates</a><br>
+          Projects<br>Experience <br>Hobbies,<br> Achievements<br>
+        </p>
       </div>
       <canvas id="game"></canvas>
     </div>
-    <script type="module" src="/src/main.js"></script>
+
+    <!-- Modal Overlay -->
+    <div id="modalOverlay"></div>
+
+    <!-- Certificate Modal (Hidden by default) -->
+    <div id="certificateModal">
+      <div class="certificate-container">
+        <div class="certificate-card" onclick="showCertificate('path_to_your_image1.jpg')">
+          <img src="assets/dbnptel.png" alt="Database Management System - IIT Kharagpur">
+          <div class="certificate-description">
+            <h4>Database Management System – IIT Kharagpur, April 2020</h4>
+          </div>
+        </div>
+
+        <div class="certificate-card" onclick="showCertificate('path_to_your_image2.jpg')">
+          <img src="assets/python.png" alt="Joy of Computing Using Python – IIT Madras">
+          <div class="certificate-description">
+            <h4>Joy of Computing Using Python – IIT Madras, September 2021</h4>
+          </div>
+        </div>
+
+        <div class="certificate-card" onclick="showCertificate('path_to_your_image3.jpg')">
+          <img src="assets/docker.jpg" alt="Docker for Beginners - Udemy">
+          <div class="certificate-description">
+            <h4>Docker for Beginners - Udemy, 2024</h4>
+          </div>
+        </div>
+
+        <div class="certificate-card" onclick="showCertificate('path_to_your_image4.jpg')">
+          <img src="assets/Linux-cmdline.jpg" alt="Master the Linux Command Line in 11.5 hours - Udemy">
+          <div class="certificate-description">
+            <h4>Master the Linux Command Line in 11.5 hours - Udemy, 2024</h4>
+          </div>
+        </div>
+
+        <div class="certificate-card" onclick="showCertificate('path_to_your_image5.jpg')">
+          <img src="assets/npteldataanalytics.png" alt="Introduction to Big Data – Coursera, University of San Diego">
+          <div class="certificate-description">
+            <h4>Introduction to Big Data – Coursera, University of San Diego</h4>
+          </div>
+        </div>
+
+        <div class="certificate-card" onclick="showCertificate('path_to_your_image6.jpg')">
+          <img src="assets/Nptel silver elite python.jpeg" alt="Data Analytics Using Python – IIT Roorkee, April 2024">
+          <div class="certificate-description">
+            <h4>Data Analytics Using Python – IIT Roorkee, April 2024</h4>
+          </div>
+        </div>
+
+        <div class="certificate-card" onclick="showCertificate('path_to_your_image7.jpg')">
+          <img src="assets/tcs.png" alt="JMeter From Scratch – Udemy, 2023">
+          <div class="certificate-description">
+            <h4>JMeter From Scratch – Udemy, 2023</h4>
+          </div>
+        </div>
+
+        <div class="btn-container">
+          <button id="closeCertificates" onclick="closeCertificateModal()">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Show the certificate modal when the link is clicked
+      function openCertificateModal() {
+        document.getElementById('certificateModal').style.display = 'block';
+        document.getElementById('modalOverlay').style.display = 'block'; // Show the overlay
+      }
+
+      // Close the certificate modal
+      function closeCertificateModal() {
+        document.getElementById('certificateModal').style.display = 'none';
+        document.getElementById('modalOverlay').style.display = 'none'; // Hide the overlay
+      }
+
+      // Show the specific certificate in the modal
+      function showCertificate(imagePath) {
+        const dialogue = document.getElementById('dialogue');
+        const notesForUser = document.getElementById('notesforuser');
+        notesForUser.innerHTML = `<img src="${imagePath}" alt="Certificate" style="width: 100%;">`;
+        dialogue.style.display = 'block';
+      }
+
+      document.getElementById('close').onclick = function() {
+        document.getElementById('dialogue').style.display = 'none';
+      }
+    </script>
   </body>
 </html>

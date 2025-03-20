@@ -4,6 +4,8 @@
   }
   body {
     margin: 0;
+    background-color: rgb(94, 25, 158); /* Set background color to violet */
+
     font-family: monogram, monospace;
     font-size: 2rem;
     overflow: hidden;
@@ -108,4 +110,78 @@
     flex-direction: column;
     user-select: none;
     color: bisque;
+  }
+  #certificateModal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the modal */
+    width: 80%;
+    max-width: 900px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    border-radius: 8px;
+  }
+
+  /* Style for the darkened background overlay */
+  #modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 998;
+  }
+
+  .certificate-card {
+    margin: 10px;
+    border: 2px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .certificate-card:hover {
+    transform: scale(1.05);
+  }
+
+  .certificate-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .certificate-description {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .certificate-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .btn-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #closeCertificates {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  #closeCertificates:hover {
+    background-color: #0056b3;
   }
