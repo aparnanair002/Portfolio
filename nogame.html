@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Game Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @font-face {
+            font-family: 'Monogram';
+            src: url('public/monogram.ttf') format('truetype');
+        }
+        body {
+            font-family: 'Monogram', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: blueviolet;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            text-align: center;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 50%;
+            align-items: center;
+            text-align: center;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* New styles for two-column layout */
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .project {
+            width: 48%; /* Adjust width for two columns */
+            margin-bottom: 20px;
+            text-align: left; /* Left align text */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="section" onclick="openModal('About Me')">
+            <h1>About Me</h1>
+        </div>
+        <div class="section" onclick="openModal('Connect Me')">
+            <h1>Connect Me</h1>
+        </div>
+        <div class="section" onclick="openModal('Resume')">
+            <h1>Resume</h1>
+        </div>
+        <div class="section" onclick="openModal('Education')">
+            <h1>Education</h1>
+        </div>
+        <div class="section" onclick="openModal('Skillsets')">
+            <h1>Skillsets</h1>
+        </div>
+        <div class="section" onclick="openCertificateModal()">
+            <h1>Certificates</h1>
+        </div>
+        <div class="section" onclick="openModal('Projects')">
+            <h1>Projects</h1>
+        </div>
+        <div class="section" onclick="openModal('Experience')">
+            <h1>Experience</h1>
+        </div>
+        <div class="section" onclick="openModal('Hobbies')">
+            <h1>Hobbies</h1>
+        </div>
+        <div class="section" onclick="openModal('Achievements')">
+            <h1>Achievements</h1>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="infoModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-content">Content will be displayed here...</p>
+        </div>
+    </div>
+    <div id="modalOverlay"></div>
+
+    <!-- Certificate Modal (Hidden by default) -->
+    <div id="certificateModal">
+      <div class="certificate-container">
+        <div class="certificate-card" onclick="showCertificate('path_to_your_image1.jpg')">
+          <img src="assets/dbnptel.png" alt="Database Management System - IIT Kharagpur">
+          <div class="certificate-description">
+            <h4>Database Management System – IIT Kharagpur, April 2020</h4>
+          </div>
+        </div>
+
+        <div class="certificate-card" onclick="showCertificate('path_to_your_image2.jpg')">
+          <img src="assets/python.png" alt="Joy of Computing Using Python – IIT Madras">
+          <div class="certificate-description">
+            <h4>Joy of Computing Using Python – IIT Madras, September 2021</h4>
+          </div>
+        </div>
+
+        <div class="certificate-card" onclick="showCertificate('path_to_your_image3.jpg')">
+          <img src="assets/docker.jpg" alt="Docker for Beginners - Udemy">
+          <div class="certificate-description">
+            <h4>Docker for Beginners - Udemy, 2024</h4>
+          </div>
+        </div>
+
+        <div class="certificate-card" onclick="showCertificate('path_to_your_image4.jpg')">
+          <img src="assets/Linux-cmdline.jpg" alt="Master the Linux Command Line in 11.5 hours - Udemy">
+          <div class="certificate-description">
+            <h4>Master the Linux Command Line in 11.5 hours - Udemy, 2024</h4>
+          </div>
+        </div>
+
+        <div class="certificate-card" onclick="showCertificate('path_to_your_image5.jpg')">
+          <img src="assets/npteldataanalytics.png" alt="Introduction to Big Data – Coursera, University of San Diego">
+          <div class="certificate-description">
+            <h4>Introduction to Big Data – Coursera, University of San Diego</h4>
+          </div>
+        </div>
+
+        <div class="certificate-card" onclick="showCertificate('path_to_your_image6.jpg')">
+          <img src="assets/Nptel silver elite python.jpeg" alt="Data Analytics Using Python – IIT Roorkee, April 2024">
+          <div class="certificate-description">
+            <h4>Data Analytics Using Python – IIT Roorkee, April 2024</h4>
+          </div>
+        </div>
+
+        <div class="certificate-card" onclick="showCertificate('path_to_your_image7.jpg')">
+          <img src="assets/tcs.png" alt="JMeter From Scratch – Udemy, 2023">
+          <div class="certificate-description">
+            <h4>JMeter From Scratch – Udemy, 2023</h4>
+          </div>
+        </div>
+
+        <div class="btn-container">
+          <button id="closeCertificates" onclick="closeCertificateModal()">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Show the certificate modal when the link is clicked
+      function openCertificateModal() {
+        document.getElementById('certificateModal').style.display = 'block';
+        document.getElementById('modalOverlay').style.display = 'block'; // Show the overlay
+      }
+
+      // Close the certificate modal
+      function closeCertificateModal() {
+        document.getElementById('certificateModal').style.display = 'none';
+        document.getElementById('modalOverlay').style.display = 'none'; // Hide the overlay
+      }
+
+      // Show the specific certificate in the modal
+      function showCertificate(imagePath) {
+        const dialogue = document.getElementById('dialogue');
+        const notesForUser = document.getElementById('notesforuser');
+        notesForUser.innerHTML = `<img src="${imagePath}" alt="Certificate" style="width: 100%;">`;
+        dialogue.style.display = 'block';
+      }
+
+      document.getElementById('close').onclick = function() {
+        document.getElementById('dialogue').style.display = 'none';
+      }
+   
+      function openModal(section) {
+        document.getElementById("modal-title").innerText = section;
+        const contentMap = {
+            "About Me": "<p style='text-align:center;'>Motivated professional willing to go an extra mile to make positive contributions to company.</p>",
+            "Connect Me": "<div style='text-align:center;'><a href='https://github.com/aparnanair002' style='padding:10px'>Github</a> <a href='https://www.linkedin.com/in/aparna-nair-709a10221/' style='padding:10px'>LinkedIn</a> <a href='https://www.instagram.com/_aparnapradeepnair/' style='padding:10px'>Instagram</a></div>",
+            "Resume": "<div style='text-align:center;'><button class='button-any'><a href='/RESUME_APARNA_NAIR.pdf' download='Aparna_Nair.pdf'>Download</a></button></div>",
+            "Education": "<p style='text-align:center;'>Education</p><p>NIRMALA COLLEGE MUVATTUPUZHA - CGPA: 8.5 (2023-Pursuing)</p><p>SANTHIGIRI COLLEGE OF COMPUTER SCIENCES - CGPA: 8.6 (2019-2022)</p>",
+            "Skillsets": "<p style='text-align:center;'>Programming Languages: C, C++,  Python, JavaScript, PHP<br><br>Web Technologies: HTML, CSS, Angular, Node JS, Express JS, Firebase<br><br>Database: MySQL, MongoDB<br><br>Tools: Git, Docker, JMeter <br><br></p>",
+            "Projects": " <div style='text-align:center;'><h3>PROJECTS</h3><div style='text-align:center;'><p><u><a href='https://github.com/aparnanair002/mini_project'>Milk Management - Dairy Direct</a></u><br>PHP, MySQL</p><p><u><a href='https://stmaryshospitalkmnr.com/'>Hospital Website - St. Mary’s Hospital Karimannoor</a></u><br>PHP, MySQL</p><p><u><a href='https://github.com/aparnanair002/pelicx'>Courier Management System</a></u><br>Angular, Express JS, Node JS, SQL</p><p><u><a href='https://github.com/aparnanair002/cameo2k24'>Cameo2024</a></u><br>PHP, MySQL</p><p><u>Residence Association Management</a></u><br>Angular, Firebase</p></div></div>",
+            "Experience": "<h2 style='text-align:center;'>EXPERIENCE</h2><p><u>SANTHISOFT TECHNOLOGIES</u><br>Intern - Jan 2025 – Present</p>",
+            "Hobbies": "<p style='text-align:center;'>My hobbies are painting, crocheting, and reading.</p>",
+            "Achievements": "<p style='text-align:center;'>Best scoring student award from Santhigiri College.</p>"
+        };
+        
+        document.getElementById("modal-content").innerHTML = contentMap[section] || "No content available.";
+        document.getElementById("modal-content").innerHTML += "<br><br><button onclick=\"closeModal()\">Close</button>";
+
+        // Ensure close button is properly displayed
+        document.getElementById("infoModal").style.display = "flex";
+    }
+    
+    // Function to close the modal
+    function closeModal() {
+        document.getElementById("infoModal").style.display = "none";
+    }
+
+    function closeModal() {
+        document.getElementById("infoModal").style.display = "none";
+    }
+
+    function openCertificateModal() {
+        document.getElementById('certificateModal').style.display = 'flex';
+    }
+
+    function closeCertificateModal() {
+        document.getElementById('certificateModal').style.display = 'none';
+    }
+</script>
+</body>
+</html>
